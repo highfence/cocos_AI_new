@@ -13,6 +13,7 @@ bool Player::init()
 	//Initialize member variable
 	setPlayerDirectionX(DIRECTION::NONE);
 	setPlayerDirectionY(DIRECTION::NONE);
+	setIsAttacking(false);
 
 	// 초기 스프라이트 설정.
 	m_pCharacter = Sprite::create(PLAYER::PLAYER_SPRITE);
@@ -50,6 +51,10 @@ void Player::onKeyPressed(EventKeyboard::KeyCode keyCode, Event *event)
 	case EventKeyboard::KeyCode::KEY_DOWN_ARROW:
 		setPlayerDirectionY(DIRECTION::DOWN);
 		break;
+	case EventKeyboard::KeyCode::KEY_A:
+		setIsAttacking(true);
+		break;
+
 	}
 
 	return;
@@ -73,6 +78,9 @@ void Player::onKeyReleased(EventKeyboard::KeyCode keyCode, Event *event)
 	case EventKeyboard::KeyCode::KEY_DOWN_ARROW:
 		setPlayerDirectionY(DIRECTION::NONE);
 		break;
+	case EventKeyboard::KeyCode::KEY_A:
+		setIsAttacking(false);
+		break;
 	}
 
 	return;
@@ -88,5 +96,6 @@ void Player::move(float dt)
 	auto currentY = m_pCharacter->getPositionY();
 
 	m_pCharacter->setPosition(currentX + dtX, currentY + dtY);
+	setPlayerPosition(m_pCharacter->getPosition());
 	return;
 }

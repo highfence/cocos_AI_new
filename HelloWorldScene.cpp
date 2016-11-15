@@ -28,7 +28,7 @@ bool HelloWorld::init()
     {
         return false;
     }
-    
+
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
@@ -36,8 +36,8 @@ bool HelloWorld::init()
 	addChild(player);
 
 	enemy = Enemy_Choco::create();
-	addChild(player);
-
+	addChild(enemy);
+	
 	scheduleUpdate();
 
     return true;
@@ -64,7 +64,22 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 void HelloWorld::update(float dt)
 {
 	player->move(dt);
-	enemy->setPlayerPosition(player->getPosition());
+	enemy->setPlayerPosition(player->getPlayerPosition());
 	enemy->CalDistanceFromOrigin();
 	enemy->CalDistanceFromPlayer();
+}
+
+void HelloWorld::deliverHited()
+{
+	if (player->getIsAttacking())
+	{
+		enemy->setIsHited(true);
+		enemy->setIsAttackedOnce(true);
+	}
+	else
+	{
+		enemy->setIsHited(false);
+	}
+
+	return;
 }

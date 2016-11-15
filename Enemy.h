@@ -24,6 +24,7 @@ public:
 	CC_SYNTHESIZE(Point, m_Origin, Origin);
 	CC_SYNTHESIZE(float, m_MoveSpeed, MoveSpeed);
 	CC_SYNTHESIZE(bool, m_IsAttackedOnce, IsAttackedOnce);
+	CC_SYNTHESIZE(bool, m_IsHited, IsHited);
 
 	CC_SYNTHESIZE(Point, m_PlayerPosition, PlayerPosition)
 	CC_SYNTHESIZE(float, m_DistanceFromPlayer, DistanceFromPlayer);

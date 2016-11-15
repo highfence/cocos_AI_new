@@ -5,6 +5,7 @@ namespace STATIC
 	const Size visibleSize = Size(1024, 768);
 	const float ATTACK_MINUS_VAL = 100.f;
 	const float CHASING_MINUS_VAL = 300.f;
+	const float ORIGIN_RANGE = 50.f;
 }
 
 
@@ -36,8 +37,8 @@ namespace ENEMY
 		const char CHOCO_ATTACK_SPRITE[] = "Choco_Attacking.png";
 
 		// Member Variable
-		const float SEARCHING_RANGE = 500.f;
-		const float CHASING_RANGE = 600.f;
+		const float SEARCHING_RANGE = 400.f;
+		const float CHASING_RANGE = 500.f;
 		const float ATTACK_RANGE = 150.f;
 		const float INIT_WIDTH = 0.8f;
 		const float INIT_HEIGHT = 0.8f;

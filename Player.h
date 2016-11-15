@@ -11,12 +11,14 @@ public :
 
 	void				 move(float);
 
+	CC_SYNTHESIZE(Point, m_PlayerPosition, PlayerPosition);
+	CC_SYNTHESIZE(int, m_PlayerDirectionX, PlayerDirectionX);
+	CC_SYNTHESIZE(int, m_PlayerDirectiony, PlayerDirectionY);
+	CC_SYNTHESIZE(bool, m_IsAttacking, IsAttacking);
 
 private :
 	Sprite*              m_pCharacter;
 
-	CC_SYNTHESIZE(Point, m_PlayerPosition, playerPosition);
-	CC_SYNTHESIZE(int, m_PlayerDirectionX, PlayerDirectionX);
-	CC_SYNTHESIZE(int, m_PlayerDirectiony, PlayerDirectionY);
+;
 
 };
