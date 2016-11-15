@@ -45,6 +45,16 @@ void Enemy::CalDistanceFromOrigin()
 
 	return;
 }
+//
+//void Enemy::SetSpriteToAttack()
+//{
+//	return;
+//}
+//
+//void Enemy::SetSpriteToCommon()
+//{
+//	return;
+//}
 
 
 // Delta 값을 받아 스프라이트를 움직이는 함수.

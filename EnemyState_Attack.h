@@ -14,6 +14,6 @@ public:
 	void		runState(Enemy* enemy, float dt) override;
 	void		endState(Enemy* enemy) override;
 
-	bool		isPlayerInAttackRange(Enemy*, float);
+	bool		isPlayerInAttackRangeAttack(Enemy*, float);
 
 };

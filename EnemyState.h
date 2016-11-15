@@ -14,4 +14,5 @@ public:
 
 	// State를 종료 시킬 함수.
 	virtual void endState(Enemy* enemy) = 0;
+
 };

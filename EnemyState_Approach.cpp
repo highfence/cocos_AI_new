@@ -23,7 +23,7 @@ void EnemyState_Approach::runState(Enemy* enemy, float dt)
 {
 	float distanceFromPlayer = enemy->getDistanceFromPlayer();
 
-	if (isPlayerInAttackRange(enemy, distanceFromPlayer))
+	if (isPlayerInAttackRangeMinus(enemy, distanceFromPlayer))
 	{
 		enemy->changeState<EnemyState_Attack>();
 	}
@@ -57,7 +57,7 @@ bool EnemyState_Approach::isPlayerInChasingRange(Enemy* enemy, float distance)
 }
 
 // 플레이어가 enemy의 Attack_Range - 100 안에 있다면 true를 반환하는 함수.
-bool EnemyState_Approach::isPlayerInAttackRange(Enemy* enemy, float distance)
+bool EnemyState_Approach::isPlayerInAttackRangeMinus(Enemy* enemy, float distance)
 {
 	if (distance < enemy->getAttackRange() - STATIC::ATTACK_MINUS_VAL)
 	{

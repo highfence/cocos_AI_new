@@ -29,7 +29,7 @@ void EnemyState_Attack::runState(Enemy* enemy, float dt)
 	{
 		enemy->changeState<EnemyState_Waiting>();
 	}
-	else if (!isPlayerInAttackRange(enemy, distanceFromPlayer))
+	else if (!isPlayerInAttackRangeAttack(enemy, distanceFromPlayer))
 	{
 		enemy->changeState<EnemyState_Approach>();
 	}
@@ -47,15 +47,12 @@ void EnemyState_Attack::endState(Enemy* enemy)
 	enemy->SetSpriteToCommon();
 }
 
-// 플레이어가 AttackRange 안에 있다면 true를, 아니라면 false를 반환하는 함수.
-bool EnemyState_Attack::isPlayerInAttackRange(Enemy *enemy, float distanceFromPlayer)
+bool EnemyState_Attack::isPlayerInAttackRangeAttack(Enemy* enemy, float distance)
 {
-	if (distanceFromPlayer < enemy->getAttackRange())
+	if (distance < enemy->getAttackRange())
 	{
 		return true;
 	}
 
 	return false;
 }
-
-

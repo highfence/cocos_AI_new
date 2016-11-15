@@ -36,8 +36,8 @@ public:
 	        void	 CalUnitVecToOrigin();
 	        void	 CalDistanceFromPlayer();
 	        void	 CalDistanceFromOrigin();
-	virtual void	 SetSpriteToAttack();
-	virtual void	 SetSpriteToCommon();
+	//virtual void	 SetSpriteToAttack();
+	//virtual void	 SetSpriteToCommon();
 
 
 	Sprite*           m_pSprite;
