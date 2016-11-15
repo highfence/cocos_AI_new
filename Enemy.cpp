@@ -24,10 +24,10 @@ void Enemy::update(float dt)
 }
 
 // 플레이어와의 거리를 구하여 m_DistanceFromPlayer에 세팅해준다.
-void Enemy::CalDistanceFromPlayer(Point playerPosition)
+void Enemy::CalDistanceFromPlayer()
 {
-	float x = playerPosition.x - m_pSprite->getPosition().x;
-	float y = playerPosition.y - m_pSprite->getPosition().y;
+	float x = getPlayerPosition().x - m_pSprite->getPosition().x;
+	float y = getPlayerPosition().y - m_pSprite->getPosition().y;
 
 	setDistanceFromPlayer(abs(sqrt(x * x + y * y)));
 
@@ -80,7 +80,7 @@ void Enemy::CalUnitVecToOrigin()
 }
 
 // 플레이어에게 향하는 UnitVec을 구하는 함수.
-void Enemy::CalDistanceFromPlayer(Point playerPosition)
+void Enemy::CalDistanceFromPlayer()
 {
 	if (!getDistanceFromPlayer())
 	{
@@ -88,8 +88,8 @@ void Enemy::CalDistanceFromPlayer(Point playerPosition)
 	}
 	float distanceFromPlayer = getDistanceFromPlayer();
 
-	float x = playerPosition.x - m_pSprite->getPosition().x;
-	float y = playerPosition.y - m_pSprite->getPosition().y;
+	float x = getPlayerPosition().x - m_pSprite->getPosition().x;
+	float y = getPlayerPosition().y - m_pSprite->getPosition().y;
 
 	Vec2 unitVecToPlayer(x / distanceFromPlayer, y / distanceFromPlayer);
 	setUnitVec(unitVecToPlayer);

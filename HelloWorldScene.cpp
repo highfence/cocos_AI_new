@@ -2,6 +2,8 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 #include "Player.h"
+#include "Enemy.h"
+#include "Enemy_Choco.h"
 
 
 Scene* HelloWorld::createScene()
@@ -33,6 +35,9 @@ bool HelloWorld::init()
 	player = Player::create();
 	addChild(player);
 
+	enemy = Enemy_Choco::create();
+	addChild(player);
+
 	scheduleUpdate();
 
     return true;
@@ -59,4 +64,7 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 void HelloWorld::update(float dt)
 {
 	player->move(dt);
+	enemy->setPlayerPosition(player->getPosition());
+	enemy->CalDistanceFromOrigin();
+	enemy->CalDistanceFromPlayer();
 }

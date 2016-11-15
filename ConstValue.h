@@ -3,6 +3,8 @@
 namespace STATIC
 {
 	const Size visibleSize = Size(1024, 768);
+	const float ATTACK_MINUS_VAL = 100.f;
+	const float CHASING_MINUS_VAL = 300.f;
 }
 
 

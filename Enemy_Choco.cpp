@@ -15,6 +15,7 @@ bool Enemy_Choco::init()
 	setAttackRange(ATTACK_RANGE);
 	setOrigin(Point(STATIC::visibleSize.width * INIT_WIDTH, STATIC::visibleSize.height * INIT_HEIGHT));
 	setMoveSpeed(MOVE_SPEED);
+	setIsAttackedOnce(false);
 
 	return true;
 }
