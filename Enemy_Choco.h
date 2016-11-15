@@ -4,10 +4,15 @@
 
 class Enemy_Choco : public Enemy
 {
-	bool init(ENEMY::ENEMY_TYPE enemy_type) override;
+	bool init() override;
 
 	bool isAttackedOnce;
 
-	CREATE_FUNC_ENEMY(Enemy_Choco);
+	// Function
+	virtual void SetSpriteToAttack();
+	virtual void SetSpriteToCommon();
+
+	CREATE_FUNC(Enemy_Choco);
+
 
 };

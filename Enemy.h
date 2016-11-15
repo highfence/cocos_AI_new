@@ -18,27 +18,27 @@ public:
 
 
 	/* Member Variable */
-	CC_SYNTHESIZE(float, m_DistanceFromPlayer, DistanceFromPlayer);
 	CC_SYNTHESIZE(float, m_SearchingRange, SearchingRange);
 	CC_SYNTHESIZE(float, m_ChasingRange, ChasingRange);
-	CC_SYNTHESIZE(Vec2, m_UnitVec, UnitVec);
-	CC_SYNTHESIZE(float, m_DistanceFromOrigin, DistanceFromOrigin);
 	CC_SYNTHESIZE(float, m_AttackRange, AttackRange);
 	CC_SYNTHESIZE(Point, m_Origin, Origin);
 	CC_SYNTHESIZE(float, m_MoveSpeed, MoveSpeed);
 
+	CC_SYNTHESIZE(float, m_DistanceFromPlayer, DistanceFromPlayer);
+	CC_SYNTHESIZE(float, m_DistanceFromOrigin, DistanceFromOrigin);
+	CC_SYNTHESIZE(Vec2, m_UnitVec, UnitVec);
 
 	/* Member Function */
-	void CalDistanceFromPlayer();
+	void CalDistanceFromPlayer(Point playerPosition);
 	void move(float dt);
 	void CalUnitVecToPlayer();
-	void CalDistanceFromPlayer();
+	void CalUnitVecToOrigin();
+	void CalDistanceFromPlayer(Point playerPosition);
 	void CalDistanceFromOrigin();
-	void ChangeSpriteToAttack();
-	void ChangeSpriteToCommon();
+	virtual void SetSpriteToAttack();
+	virtual void SetSpriteToCommon();
 
 
-private:
 	Sprite*           m_pSprite;
 };
 
