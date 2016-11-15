@@ -30,14 +30,15 @@ namespace ENEMY
 	namespace CHOCO
 	{
 		// Sprite
-
+		const char CHOCO_SPRITE[] = "Choco.png";
+		const char CHOCO_ATTACK_SPRITE[] = "Choco_Attacking.png";
 
 		// Member Variable
-		float SEARCHING_RANGE = 500.f;
-		float CHASING_RANGE = 600.f;
-		float ATTACK_RANGE = 150.f;
-		float INIT_WIDTH = 0.8f;
-		float INIT_HEIGHT = 0.8f;
-		float MOVE_SPEED = 200.f;
+		const float SEARCHING_RANGE = 500.f;
+		const float CHASING_RANGE = 600.f;
+		const float ATTACK_RANGE = 150.f;
+		const float INIT_WIDTH = 0.8f;
+		const float INIT_HEIGHT = 0.8f;
+		const float MOVE_SPEED = 200.f;
 	}
 }

@@ -2,29 +2,12 @@
 
 #include "EnemyState.h"
 
-// 적 타입에 따라서 다른 CREATE_FUNC를 만들어주기 위해서 정의.
-#define CREATE_FUNC_ENEMY(__TYPE__) \
-static __TYPE__* create(ENEMY::ENEMY_TYPE emeny_type) \
-{ \
-    __TYPE__ *pRet = new(std::nothrow) __TYPE__(); \
-    if (pRet && pRet->init(ownerPlayer)) \
-    { \
-        pRet->autorelease(); \
-		pRet->scheduleUpdate();\
-        return pRet; \
-    } \
-    else \
-    { \
-        delete pRet; \
-        pRet = nullptr; \
-        return nullptr; \
-    } \
-}
 
 class Enemy : public Sprite
 {
 public:
-	virtual bool      init(ENEMY::ENEMY_TYPE enemy_type);
+	CREATE_FUNC(Enemy);
+	virtual bool      init();
 	virtual void      update(float dt) override;
 
 	/* State */
@@ -42,6 +25,7 @@ public:
 	CC_SYNTHESIZE(float, m_DistanceFromOrigin, DistanceFromOrigin);
 	CC_SYNTHESIZE(float, m_AttackRange, AttackRange);
 	CC_SYNTHESIZE(Point, m_Origin, Origin);
+	CC_SYNTHESIZE(float, m_MoveSpeed, MoveSpeed);
 
 
 	/* Member Function */
