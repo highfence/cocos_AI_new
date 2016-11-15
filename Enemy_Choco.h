@@ -4,9 +4,9 @@
 
 class Enemy_Choco : public Enemy
 {
+public :
 	bool init() override;
 
-	bool isAttackedOnce;
 
 	// Function
 	virtual void SetSpriteToAttack();

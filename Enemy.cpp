@@ -80,7 +80,7 @@ void Enemy::CalUnitVecToOrigin()
 }
 
 // 플레이어에게 향하는 UnitVec을 구하는 함수.
-void Enemy::CalDistanceFromPlayer()
+void Enemy::CalUnitVecToPlayer()
 {
 	if (!getDistanceFromPlayer())
 	{

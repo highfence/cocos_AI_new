@@ -31,12 +31,11 @@ public:
 	CC_SYNTHESIZE(Vec2, m_UnitVec, UnitVec);
 
 	/* Member Function */
-	void			 CalDistanceFromPlayer();
-	void			 move(float dt);
-	void			 CalUnitVecToPlayer();
-	void			 CalUnitVecToOrigin();
-	void		   	 CalDistanceFromPlayer();
-	void			 CalDistanceFromOrigin();
+	        void	 move(float dt);
+	        void	 CalUnitVecToPlayer();
+	        void	 CalUnitVecToOrigin();
+	        void	 CalDistanceFromPlayer();
+	        void	 CalDistanceFromOrigin();
 	virtual void	 SetSpriteToAttack();
 	virtual void	 SetSpriteToCommon();
 
