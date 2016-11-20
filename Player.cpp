@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "Player.h"
+#include "gainput\gainput.h"
+#include "windows.h"
 
 using namespace PLAYER;
 
@@ -16,8 +18,25 @@ bool Player::init()
 	setIsAttacking(false);
 
 	// 초기 스프라이트 설정.
-	m_pCharacter = Sprite::create(PLAYER::PLAYER_SPRITE);
-	m_pCharacter->setPosition(Vec2(STATIC::visibleSize.width * INIT_WIDTH, STATIC::visibleSize.height * INIT_HEIGHT));
+	TCHAR plistNameBuffer[255];
+	TCHAR characterNameBuffer[255];
+	UINT initialPosWidth;
+	UINT initialPosHeight;
+
+	GetPrivateProfileString(L"PLAYER_SPRITE", L"PLAYER_PLIST", L"", plistNameBuffer, 255, L"test.ini" );
+	GetPrivateProfileString(L"PLAYER_SPRITE", L"PLAYER_SPRITE", L"", characterNameBuffer, 255, L"test.ini");
+	initialPosWidth = GetPrivateProfileInt(L"PLAYER_CONST", L"INIT_WIDTH", 0, L"test.ini");
+	initialPosHeight = GetPrivateProfileInt(L"PLAYER_CONST", L"INIT_HEIGHT", 0, L"test.ini");
+
+	char plistName[255];
+	char initSpriteName[255];
+
+	WideCharToMultiByte(CP_ACP, 0, plistNameBuffer, 255, plistName, 255, NULL, NULL);
+	WideCharToMultiByte(CP_ACP, 0, characterNameBuffer, 255, initSpriteName, 255, NULL, NULL);
+
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile(plistName);
+	m_pCharacter = Sprite::createWithSpriteFrameName(initSpriteName);
+	m_pCharacter->setPosition(Point(initialPosWidth, initialPosHeight));
 	addChild(m_pCharacter);
 
 	// 키보드 입력 설정.

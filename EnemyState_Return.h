@@ -14,6 +14,6 @@ public:
 	void		runState(Enemy* enemy, float dt) override;
 	void		endState(Enemy* enemy) override;
 
-	bool		isPlayerInReChasingRange(Enemy*, float);
+	bool		isPlayerInChasingRange(Enemy*, float);
 
 };

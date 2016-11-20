@@ -6,7 +6,6 @@
 class Enemy : public Sprite
 {
 public:
-	CREATE_FUNC(Enemy);
 	virtual bool      init();
 	virtual void      update(float dt) override;
 
@@ -31,14 +30,16 @@ public:
 	CC_SYNTHESIZE(float, m_DistanceFromOrigin, DistanceFromOrigin);
 	CC_SYNTHESIZE(Vec2, m_UnitVec, UnitVec);
 
+
 	/* Member Function */
 	        void	 move(float dt);
 	        void	 CalUnitVecToPlayer();
 	        void	 CalUnitVecToOrigin();
 	        void	 CalDistanceFromPlayer();
 	        void	 CalDistanceFromOrigin();
-	//virtual void	 SetSpriteToAttack();
-	//virtual void	 SetSpriteToCommon();
+			void     HitedMove(float dt);
+	virtual void	 SetSpriteToAttack() = 0;
+	virtual void	 SetSpriteToCommon() = 0;
 
 
 	Sprite*           m_pSprite;

@@ -19,7 +19,7 @@ namespace PLAYER
 	const char PLAYER_SPRITE[] = "Character.png";
 	const float INIT_WIDTH = 0.2f;
 	const float INIT_HEIGHT = 0.2f;
-	const int PIXEL_PER_SEC = 300;
+	const int PIXEL_PER_SEC = 400;
 }
 
 
@@ -43,5 +43,6 @@ namespace ENEMY
 		const float INIT_WIDTH = 0.8f;
 		const float INIT_HEIGHT = 0.8f;
 		const float MOVE_SPEED = 200.f;
+		const float HITTED_SPEED = 6000.f;
 	}
 }

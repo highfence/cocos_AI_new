@@ -9,8 +9,8 @@ public :
 
 
 	// Function
-/*	virtual void SetSpriteToAttack();
-	virtual void SetSpriteToCommon()*/;
+	virtual void SetSpriteToAttack();
+	virtual void SetSpriteToCommon();
 
 	CREATE_FUNC(Enemy_Choco);
 

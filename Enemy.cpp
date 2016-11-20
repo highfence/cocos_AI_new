@@ -45,6 +45,8 @@ void Enemy::CalDistanceFromOrigin()
 
 	return;
 }
+
+
 //
 //void Enemy::SetSpriteToAttack()
 //{

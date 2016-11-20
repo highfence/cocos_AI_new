@@ -25,7 +25,7 @@ void EnemyState_Return::runState(Enemy* enemy, float dt)
 	float distanceFromPlayer = enemy->getDistanceFromPlayer();
 	float distanceFromOrigin = enemy->getDistanceFromOrigin();
 
-	if (isPlayerInReChasingRange(enemy, distanceFromPlayer))
+	if (isPlayerInChasingRange(enemy, distanceFromPlayer))
 	{
 		enemy->changeState<EnemyState_Approach>();
 	}
@@ -50,7 +50,7 @@ void EnemyState_Return::endState(Enemy* enemy)
 
 
 // 플레이어가 enemy의 ReChasing_Range 안에 있다면 true를 반환하는 함수.
-bool EnemyState_Return::isPlayerInReChasingRange(Enemy* enemy, float distance)
+bool EnemyState_Return::isPlayerInChasingRange(Enemy* enemy, float distance)
 {
 	if (distance < enemy->getChasingRange() - STATIC::CHASING_MINUS_VAL)
 	{

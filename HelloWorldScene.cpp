@@ -67,6 +67,7 @@ void HelloWorld::update(float dt)
 	enemy->setPlayerPosition(player->getPlayerPosition());
 	enemy->CalDistanceFromOrigin();
 	enemy->CalDistanceFromPlayer();
+	deliverHited();
 }
 
 void HelloWorld::deliverHited()
@@ -75,10 +76,6 @@ void HelloWorld::deliverHited()
 	{
 		enemy->setIsHited(true);
 		enemy->setIsAttackedOnce(true);
-	}
-	else
-	{
-		enemy->setIsHited(false);
 	}
 
 	return;

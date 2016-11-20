@@ -18,7 +18,7 @@
 void EnemyState_Attack::startState(Enemy* enemy)
 {
 	CCLOG("Start Attack!");
-	//enemy->SetSpriteToAttack();
+	enemy->SetSpriteToAttack();
 }
 
 void EnemyState_Attack::runState(Enemy* enemy, float dt)
@@ -29,7 +29,7 @@ void EnemyState_Attack::runState(Enemy* enemy, float dt)
 	{
 		enemy->changeState<EnemyState_Waiting>();
 	}
-	else if (!isPlayerInAttackRangeAttack(enemy, distanceFromPlayer))
+	else if (!isPlayerInAttackRange(enemy, distanceFromPlayer))
 	{
 		enemy->changeState<EnemyState_Approach>();
 	}
@@ -44,10 +44,10 @@ void EnemyState_Attack::runState(Enemy* enemy, float dt)
 void EnemyState_Attack::endState(Enemy* enemy)
 {
 	CCLOG("End Attack!");
-	//enemy->SetSpriteToCommon();
+	enemy->SetSpriteToCommon();
 }
 
-bool EnemyState_Attack::isPlayerInAttackRangeAttack(Enemy* enemy, float distance)
+bool EnemyState_Attack::isPlayerInAttackRange(Enemy* enemy, float distance)
 {
 	if (distance < enemy->getAttackRange())
 	{

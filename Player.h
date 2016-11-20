@@ -18,7 +18,7 @@ public :
 
 private :
 	Sprite*              m_pCharacter;
-
-;
+	Animation*		     m_pAnimation;
+	Animate*			 m_pAnimate;
 
 };
